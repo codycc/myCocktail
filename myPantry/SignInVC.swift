@@ -30,6 +30,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                     if let user = user {
                         let userData = ["provider": user.providerID]
                         self.completeSignIn(id: user.uid, userData: userData)
+                        self.performSegue(withIdentifier: "goToFridgeVC", sender: nil)
                     }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -40,6 +41,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                             if let user = user {
                               let userData = ["provider" : user.providerID]
                                 self.completeSignIn(id: user.uid, userData: userData)
+                                self.performSegue(withIdentifier: "goToFridgeVC", sender: nil)
                             }
                             
                         }
@@ -55,6 +57,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         DataService.ds.createFirebaseDbUser(uid: id, userData: userData)
         
         let keyChainResult: Bool = KeychainWrapper.standard.set(id, forKey: "uid")
+        print(keyChainResult)
     }
 
 
