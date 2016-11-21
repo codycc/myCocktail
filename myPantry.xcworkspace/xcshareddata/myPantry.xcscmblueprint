@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D22BE84891406C9F0745BEE8BEBC180899BA5BBF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D22BE84891406C9F0745BEE8BEBC180899BA5BBF" : 9223372036854775807,
+    "7C0B6D413C947FC7691F2025FE67B2D2D86C37DF" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F28702ED-3407-449D-BCCD-39DE5F57D254",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D22BE84891406C9F0745BEE8BEBC180899BA5BBF" : "myPantry\/",
+    "7C0B6D413C947FC7691F2025FE67B2D2D86C37DF" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "myPantry",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "myPantry.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:codycc\/stanford_course.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7C0B6D413C947FC7691F2025FE67B2D2D86C37DF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:codycc\/myCocktail.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D22BE84891406C9F0745BEE8BEBC180899BA5BBF"
+    }
+  ]
+}
