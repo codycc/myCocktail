@@ -21,6 +21,15 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: "uid") {
+            print("CODY1: ID found in keychain")
+            // Perform segue if keychain already exists
+            performSegue(withIdentifier: "goToFridgeVC", sender: nil)
+            
+        }
+    }
+    
     
     @IBAction func signInTapped(_ sender: Any) {
         if let email = emailField.text, let password = passwordField.text {

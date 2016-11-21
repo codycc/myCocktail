@@ -59,10 +59,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2N-4c-kij">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myBar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ha9-HE-J7z">
-                                        <rect key="frame" x="138" y="16" width="99.5" height="29"/>
+                                        <rect key="frame" x="138" y="25" width="99.5" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="Vat-4e-2LW"/>
                                             <constraint firstAttribute="width" constant="99.5" id="ZXq-gC-Ef4"/>
@@ -71,12 +71,25 @@
                                         <color key="textColor" red="0.99052219102442152" green="0.98960318236911582" blue="0.99928468465805054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGO-7a-fbc">
+                                        <rect key="frame" x="8" y="22" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="QhP-aX-mab"/>
+                                            <constraint firstAttribute="height" constant="35" id="Z36-zd-03D"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="signout"/>
+                                        <connections>
+                                            <action selector="signoutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ZF-5E-plt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.47843137250000001" green="0.53333333329999999" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dGO-7a-fbc" secondAttribute="bottom" constant="8" id="AjM-K8-EZ4"/>
+                                    <constraint firstItem="Ha9-HE-J7z" firstAttribute="centerY" secondItem="dGO-7a-fbc" secondAttribute="centerY" id="Mkg-pK-Xhn"/>
                                     <constraint firstItem="Ha9-HE-J7z" firstAttribute="centerX" secondItem="J2N-4c-kij" secondAttribute="centerX" id="S9d-Qv-lYG"/>
-                                    <constraint firstAttribute="height" constant="60" id="TPg-QN-gnh"/>
-                                    <constraint firstItem="Ha9-HE-J7z" firstAttribute="centerY" secondItem="J2N-4c-kij" secondAttribute="centerY" id="w8k-g6-1LO"/>
+                                    <constraint firstAttribute="height" constant="65" id="TPg-QN-gnh"/>
+                                    <constraint firstItem="dGO-7a-fbc" firstAttribute="leading" secondItem="J2N-4c-kij" secondAttribute="leading" constant="8" id="eO9-Fv-fKa"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-4p-ybO">
@@ -91,7 +104,7 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WfX-jm-xMj">
-                                <rect key="frame" x="0.0" y="60" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="497"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="fCh-TC-lww">
@@ -451,7 +464,7 @@
                                     <constraint firstAttribute="width" constant="269" id="tDC-fk-xb6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVu-O6-SwU">
@@ -461,7 +474,7 @@
                                     <constraint firstAttribute="height" constant="22" id="vcn-Fn-aoc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e johndoe@example.com" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="gZX-VF-PyE" customClass="RoundField" customModule="myPantry" customModuleProvider="target">
@@ -484,7 +497,7 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.97561498040000005" green="0.99049006530000006" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
                                         <color key="value" red="0.90980392156862744" green="0.91764705882352937" blue="0.96470588235294119" alpha="0.769256161971831" colorSpace="calibratedRGB"/>
@@ -511,7 +524,7 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.99052219100000005" green="0.9896031824" blue="0.99928468469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
                                         <color key="value" red="0.90980392160000001" green="0.91764705879999997" blue="0.96470588239999999" alpha="0.77090669014084512" colorSpace="calibratedRGB"/>
@@ -536,7 +549,7 @@
                                         <color key="value" red="0.1058823529" green="0.1529411765" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.97561498040000005" green="0.99049006530000006" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
@@ -596,5 +609,6 @@
         <image name="chicken" width="656" height="369"/>
         <image name="cocktail" width="1500" height="1125"/>
         <image name="cocktailpour" width="1503" height="1000"/>
+        <image name="signout" width="905" height="980"/>
     </resources>
 </document>

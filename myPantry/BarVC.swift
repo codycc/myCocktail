@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Firebase
+import SwiftKeychainWrapper
 
 class BarVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+       
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +28,13 @@ class BarVC: UIViewController {
     }
 
 
+    @IBAction func signoutTapped(_ sender: Any) {
+        let removeKeychain: Bool = KeychainWrapper.standard.removeObject(forKey: "uid")
+        print("CODY1: ID removed from keychain \(removeKeychain)")
+        try! FIRAuth.auth()?.signOut()
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        
+    }
+  
 }
 
