@@ -19,11 +19,14 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
     @IBOutlet weak var darkBgView: UIView!
     
     var drinks = [String]()
+    var selectedDrinks = [String]()
     var currentUser: User!
     
     override func viewDidLoad() {
+        self.selectedDrinks = []
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsMultipleSelection = true
         addDrinkTextField.delegate = self
         let user = DataService.ds.REF_USER_CURRENT
         print(user)
@@ -40,6 +43,18 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return drinks.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let drink = drinks[indexPath.row]
+        selectedDrinks.append(drink)
+        print(selectedDrinks)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let drink = drinks[indexPath.row]
+        selectedDrinks = selectedDrinks.filter() {$0 != drink }
+        print(selectedDrinks)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

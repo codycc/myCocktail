@@ -16,5 +16,7 @@ class DrinkCell: UITableViewCell {
         print(drink)
         drinkLbl.text = drink.capitalized
     }
+    
+  
 
 }
