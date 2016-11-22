@@ -107,7 +107,7 @@
                                 <rect key="frame" x="0.0" y="65" width="375" height="497"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="fCh-TC-lww">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrinkCell" rowHeight="61" id="fCh-TC-lww" customClass="DrinkCell" customModule="myPantry" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fCh-TC-lww" id="nAf-8q-3YI">
@@ -122,19 +122,22 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smirnoff Vodka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7G-gU-mzI">
-                                                    <rect key="frame" x="30" y="5" width="275" height="50"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="5" width="355" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="I7G-gU-mzI" firstAttribute="leading" secondItem="nAf-8q-3YI" secondAttribute="leading" constant="30" id="HXQ-2N-VpZ"/>
+                                                <constraint firstItem="I7G-gU-mzI" firstAttribute="leading" secondItem="nAf-8q-3YI" secondAttribute="leading" constant="10" id="HXQ-2N-VpZ"/>
                                                 <constraint firstItem="I7G-gU-mzI" firstAttribute="top" secondItem="nAf-8q-3YI" secondAttribute="top" constant="5" id="ht4-LO-NZb"/>
-                                                <constraint firstAttribute="trailing" secondItem="I7G-gU-mzI" secondAttribute="trailing" constant="70" id="rx8-pH-Zow"/>
+                                                <constraint firstAttribute="trailing" secondItem="I7G-gU-mzI" secondAttribute="trailing" constant="10" id="rx8-pH-Zow"/>
                                                 <constraint firstAttribute="bottom" secondItem="I7G-gU-mzI" secondAttribute="bottom" constant="5" id="yU4-Z1-53V"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="drinkLbl" destination="I7G-gU-mzI" id="1O6-Mc-RBS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -156,10 +159,13 @@
                             <constraint firstAttribute="trailing" secondItem="XcH-Kb-7bc" secondAttribute="trailing" id="zSY-6q-SKU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="WfX-jm-xMj" id="6OX-EN-y6h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533.60000000000002" y="169.56521739130437"/>
+            <point key="canvasLocation" x="527" y="242"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s3H-cj-q9t">

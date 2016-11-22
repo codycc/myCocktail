@@ -36,8 +36,14 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("CODY1: Email user athenticated with firebase")
+                    
+                    
+                    
                     if let user = user {
+                        
                         let userData = ["provider": user.providerID]
+                        
+                        
                         self.completeSignIn(id: user.uid, userData: userData)
                         self.performSegue(withIdentifier: "goToFridgeVC", sender: nil)
                     }
@@ -48,10 +54,21 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                         } else {
                             print("CODY: Successfully signed up with Firebase")
                             if let user = user {
-                              let userData = ["provider" : user.providerID]
+                                
+                                let firebaseBar = DataService.ds.REF_BARS.childByAutoId()
+                                let firebaseBarKey = firebaseBar.key
+                                let barData = ["userID": user.uid]
+                                firebaseBar.setValue(barData)
+
+                                
+                                
+                              let userData = ["provider" : user.providerID,
+                                              "barID": firebaseBarKey]
                                 self.completeSignIn(id: user.uid, userData: userData)
                                 self.performSegue(withIdentifier: "goToFridgeVC", sender: nil)
                             }
+                            
+                            
                             
                         }
                     })
@@ -64,6 +81,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     
     func completeSignIn(id: String, userData: Dictionary<String,Any>) {
         DataService.ds.createFirebaseDbUser(uid: id, userData: userData)
+        
+       
+        
+        
         
         let keyChainResult: Bool = KeychainWrapper.standard.set(id, forKey: "uid")
         print(keyChainResult)
