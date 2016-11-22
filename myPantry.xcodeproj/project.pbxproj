@@ -12,6 +12,8 @@
 		0B4C61AA1DDFAA93001CD3F8 /* RoundField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C61A91DDFAA93001CD3F8 /* RoundField.swift */; };
 		0B4C61AC1DDFACCE001CD3F8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */; };
 		0B8CAB351DE4D00C00B113E0 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB341DE4D00C00B113E0 /* DrinkCell.swift */; };
+		0B8CAB371DE4E8D500B113E0 /* RoundedDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */; };
+		0B8CAB391DE4EA5800B113E0 /* RoundedField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */; };
 		0B9D097B1DE337FD00F80217 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D097A1DE337FD00F80217 /* SignInVC.swift */; };
 		0BB22FF31DDF85DC00F73410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB22FF21DDF85DC00F73410 /* AppDelegate.swift */; };
 		0BB22FF51DDF85DC00F73410 /* BarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB22FF41DDF85DC00F73410 /* BarVC.swift */; };
@@ -30,6 +32,8 @@
 		0B4C61A91DDFAA93001CD3F8 /* RoundField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundField.swift; sourceTree = "<group>"; };
 		0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		0B8CAB341DE4D00C00B113E0 /* DrinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
+		0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDrinkView.swift; sourceTree = "<group>"; };
+		0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedField.swift; sourceTree = "<group>"; };
 		0B9D097A1DE337FD00F80217 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		0BB22FEF1DDF85DC00F73410 /* myPantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myPantry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB22FF21DDF85DC00F73410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				0B4C61A91DDFAA93001CD3F8 /* RoundField.swift */,
 				0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */,
 				0B8CAB341DE4D00C00B113E0 /* DrinkCell.swift */,
+				0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */,
+				0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -286,8 +292,10 @@
 				0B06FC561DE2170B00737201 /* User.swift in Sources */,
 				0B4C61AA1DDFAA93001CD3F8 /* RoundField.swift in Sources */,
 				0B9D097B1DE337FD00F80217 /* SignInVC.swift in Sources */,
+				0B8CAB391DE4EA5800B113E0 /* RoundedField.swift in Sources */,
 				0B8CAB351DE4D00C00B113E0 /* DrinkCell.swift in Sources */,
 				0B4C61AC1DDFACCE001CD3F8 /* RoundedButton.swift in Sources */,
+				0B8CAB371DE4E8D500B113E0 /* RoundedDrinkView.swift in Sources */,
 				0BD2F3FC1DE3DE750044CCD2 /* Drink.swift in Sources */,
 				0B06FC531DE214E000737201 /* DataService.swift in Sources */,
 			);
