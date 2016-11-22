@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate {
+class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate,UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var drinkFormView: UIView!
@@ -19,9 +19,12 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
     @IBOutlet weak var darkBgView: UIView!
     
     var drinks = [String]()
+    var currentUser: User!
+    
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
+        addDrinkTextField.delegate = self
         let user = DataService.ds.REF_USER_CURRENT
         print(user)
         
@@ -50,38 +53,40 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
         }
     }
     
+    func setCurrentUser() {
+        DataService.ds.REF_USER_CURRENT.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let userDict = snapshot.value as? Dictionary<String, AnyObject> {
+                let key = snapshot.key
+                self.currentUser = User(userKey: key, userData: userDict)
+            }
+        })
+    }
+    
     
     func findBarItems() {
-        self.drinks = []
+        
+        
         let _ = DataService.ds.REF_USER_CURRENT.observeSingleEvent( of: .value, with: { (snapshot) in
             let barID = snapshot.childSnapshot(forPath: "barID").value as! String
             print(barID)
             
             let barRef = DataService.ds.REF_BARS.child(barID).child("drinks")
-            barRef.observeSingleEvent( of: .value, with: { (snapshot) in
+            barRef.observe(.value , with: { (snapshot) in
+                self.drinks = []
                 if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                     for snap in snapshot {
                         let drink = snap.key
                         self.drinks.append(drink)
                         self.refreshUI()
+                      
                     }
                 }
             })
+           
         })
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-            if segue.identifier == "showForm"{
-                let popoverViewController = segue.destination
-                
-                popoverViewController.modalPresentationStyle = UIModalPresentationStyle.popover
-                popoverViewController.popoverPresentationController!.delegate = self
-         
-               
-            }
-        
-    }
+  
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
          return UIModalPresentationStyle.none
@@ -106,6 +111,17 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
         addDrinkTextField.isHidden = true
         submitDrinkBtn.isHidden = true
         darkBgView.isHidden = true
+        
+        let _ = DataService.ds.REF_USER_CURRENT.observeSingleEvent( of: .value, with: { (snapshot) in
+            let barID = snapshot.childSnapshot(forPath: "barID").value as! String
+            print(barID)
+            let drink = self.addDrinkTextField.text!
+            let barRef = DataService.ds.REF_BARS.child(barID).child("drinks").child(drink)
+            barRef.setValue(true)
+            self.view.endEditing(true)
+        })
+        
+        
     }
     
     @IBAction func darkBgTapped(_ sender: Any) {
@@ -113,6 +129,7 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
         addDrinkTextField.isHidden = true
         submitDrinkBtn.isHidden = true
         darkBgView.isHidden = true
+        self.view.endEditing(true)
 
     }
 
