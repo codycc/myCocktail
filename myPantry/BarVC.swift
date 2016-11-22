@@ -10,8 +10,13 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var drinkFormView: UIView!
+    @IBOutlet weak var addDrinkTextField: UITextField!
+    @IBOutlet weak var submitDrinkBtn: UIButton!
+    @IBOutlet weak var darkBgView: UIView!
     
     var drinks = [String]()
     override func viewDidLoad() {
@@ -47,7 +52,6 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func findBarItems() {
-        
         self.drinks = []
         let _ = DataService.ds.REF_USER_CURRENT.observeSingleEvent( of: .value, with: { (snapshot) in
             let barID = snapshot.childSnapshot(forPath: "barID").value as! String
@@ -66,8 +70,50 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+            if segue.identifier == "showForm"{
+                let popoverViewController = segue.destination
+                
+                popoverViewController.modalPresentationStyle = UIModalPresentationStyle.popover
+                popoverViewController.popoverPresentationController!.delegate = self
+         
+               
+            }
+        
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+         return UIModalPresentationStyle.none
+    }
+    
     func refreshUI() {
         self.tableView.reloadData()
+    }
+    
+    
+   
+    
+    @IBAction func addDrinkTapped(_ sender: Any) {
+        drinkFormView.isHidden = false
+        addDrinkTextField.isHidden = false
+        submitDrinkBtn.isHidden = false
+        darkBgView.isHidden = false
+    }
+    
+    @IBAction func submitDrinkTapped(_ sender: Any) {
+        drinkFormView.isHidden = true
+        addDrinkTextField.isHidden = true
+        submitDrinkBtn.isHidden = true
+        darkBgView.isHidden = true
+    }
+    
+    @IBAction func darkBgTapped(_ sender: Any) {
+        drinkFormView.isHidden = true
+        addDrinkTextField.isHidden = true
+        submitDrinkBtn.isHidden = true
+        darkBgView.isHidden = true
+
     }
 
     @IBAction func signoutTapped(_ sender: Any) {
