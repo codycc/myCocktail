@@ -11,4 +11,6 @@ target 'myPantry' do
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'SwiftKeychainWrapper'
+  pod 'Alamofire', '~> 4.0'
+  
 end

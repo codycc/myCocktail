@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
+import Alamofire
+
+
 
 class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopoverPresentationControllerDelegate,UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -147,6 +150,27 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
         self.view.endEditing(true)
 
     }
+    
+    @IBAction func findCocktailsTapped(_ sender: Any) {
+        let url = FOOD_URL
+         let items = selectedDrinks
+        var newArray = [String]()
+        
+        
+        for item in items {
+            newArray.append(item)
+        }
+        
+        let stringSearch = newArray.joined(separator: ",")
+        print("here is string search\(stringSearch)")
+        let alamoString = "\(url)/search?\(API_KEY)&q=\(stringSearch)"
+        print(alamoString)
+        
+   
+    
+     //   Alamofire.request(<#T##url: URLConvertible##URLConvertible#>)
+    }
+    
 
     @IBAction func signoutTapped(_ sender: Any) {
         let removeKeychain: Bool = KeychainWrapper.standard.removeObject(forKey: "uid")
