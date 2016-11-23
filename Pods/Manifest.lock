@@ -45,6 +45,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - Kingfisher (3.2.0)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - Kingfisher (~> 3.0)
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
@@ -68,8 +70,9 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  Kingfisher: 50407d1d5dbc34965009d425a286342ff36a84ea
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: c5c6079b011e1dd129ee40451343616cdbae4f03
+PODFILE CHECKSUM: 45e9c5c58c8adad14426cd8df223ef67c510d305
 
 COCOAPODS: 1.1.1

@@ -13,6 +13,8 @@
 		0B4C61AC1DDFACCE001CD3F8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */; };
 		0B551E911DE50B1E006BC2AF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B551E901DE50B1E006BC2AF /* Constants.swift */; };
 		0B640A041DE53A3F0069A9FE /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B640A031DE53A3F0069A9FE /* ResultsVC.swift */; };
+		0B640A061DE53BCB0069A9FE /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B640A051DE53BCB0069A9FE /* ResultCell.swift */; };
+		0B640A081DE5418D0069A9FE /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B640A071DE5418D0069A9FE /* RecipeVC.swift */; };
 		0B8CAB351DE4D00C00B113E0 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB341DE4D00C00B113E0 /* DrinkCell.swift */; };
 		0B8CAB371DE4E8D500B113E0 /* RoundedDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */; };
 		0B8CAB391DE4EA5800B113E0 /* RoundedField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */; };
@@ -34,6 +36,8 @@
 		0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		0B551E901DE50B1E006BC2AF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0B640A031DE53A3F0069A9FE /* ResultsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
+		0B640A051DE53BCB0069A9FE /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		0B640A071DE5418D0069A9FE /* RecipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
 		0B8CAB341DE4D00C00B113E0 /* DrinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
 		0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDrinkView.swift; sourceTree = "<group>"; };
 		0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedField.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				0B8CAB341DE4D00C00B113E0 /* DrinkCell.swift */,
 				0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */,
 				0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */,
+				0B640A051DE53BCB0069A9FE /* ResultCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				0BB22FF41DDF85DC00F73410 /* BarVC.swift */,
 				0B9D097A1DE337FD00F80217 /* SignInVC.swift */,
 				0B640A031DE53A3F0069A9FE /* ResultsVC.swift */,
+				0B640A071DE5418D0069A9FE /* RecipeVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -301,6 +307,8 @@
 				0B4C61AC1DDFACCE001CD3F8 /* RoundedButton.swift in Sources */,
 				0B8CAB371DE4E8D500B113E0 /* RoundedDrinkView.swift in Sources */,
 				0B06FC531DE214E000737201 /* DataService.swift in Sources */,
+				0B640A081DE5418D0069A9FE /* RecipeVC.swift in Sources */,
+				0B640A061DE53BCB0069A9FE /* ResultCell.swift in Sources */,
 				0B551E911DE50B1E006BC2AF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

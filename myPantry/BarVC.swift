@@ -75,11 +75,8 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResultsVC" {
-            // if the destination is the liquor detail view controller
             if let resultsVC = segue.destination as? ResultsVC {
-                // if the info is an instance of liquor results
                 if let recipe = sender as? [Recipe] {
-                    // this instance sends through to the variable on the other side
                     resultsVC.recipes = recipe
                 }
             }
@@ -142,7 +139,9 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
             let barRef = DataService.ds.REF_BARS.child(barID).child("drinks").child(drink)
             barRef.setValue(true)
             self.view.endEditing(true)
+            self.addDrinkTextField.text = ""
         })
+        
         
         
     }
@@ -157,10 +156,10 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
     }
     
     @IBAction func findCocktailsTapped(_ sender: Any) {
+        
         let url = FOOD_URL
         let items = selectedDrinks
         var newArray = [String]()
-        
         
         for item in items {
             newArray.append(item)
@@ -185,6 +184,9 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
                 }
             }
             self.performSegue(withIdentifier: "goToResultsVC", sender: self.recipes)
+            self.selectedDrinks = []
+            self.recipes = []
+            
         }
     }
     
