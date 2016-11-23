@@ -12,6 +12,7 @@
 		0B4C61AA1DDFAA93001CD3F8 /* RoundField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C61A91DDFAA93001CD3F8 /* RoundField.swift */; };
 		0B4C61AC1DDFACCE001CD3F8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */; };
 		0B551E911DE50B1E006BC2AF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B551E901DE50B1E006BC2AF /* Constants.swift */; };
+		0B640A041DE53A3F0069A9FE /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B640A031DE53A3F0069A9FE /* ResultsVC.swift */; };
 		0B8CAB351DE4D00C00B113E0 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB341DE4D00C00B113E0 /* DrinkCell.swift */; };
 		0B8CAB371DE4E8D500B113E0 /* RoundedDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */; };
 		0B8CAB391DE4EA5800B113E0 /* RoundedField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */; };
@@ -21,7 +22,7 @@
 		0BB22FF81DDF85DC00F73410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB22FF61DDF85DC00F73410 /* Main.storyboard */; };
 		0BB22FFA1DDF85DC00F73410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB22FF91DDF85DC00F73410 /* Assets.xcassets */; };
 		0BB22FFD1DDF85DC00F73410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB22FFB1DDF85DC00F73410 /* LaunchScreen.storyboard */; };
-		0BD2F3FE1DE3DEF10044CCD2 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2F3FD1DE3DEF10044CCD2 /* Cocktail.swift */; };
+		0BD2F3FE1DE3DEF10044CCD2 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD2F3FD1DE3DEF10044CCD2 /* Recipe.swift */; };
 		0BE3DC0B1DE0DC5300FAFF07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BE3DC0A1DE0DC5300FAFF07 /* GoogleService-Info.plist */; };
 		971D82559E495A4D9B28E708 /* Pods_myPantry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20CCBC5F3339B0688FB25B6 /* Pods_myPantry.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		0B4C61A91DDFAA93001CD3F8 /* RoundField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundField.swift; sourceTree = "<group>"; };
 		0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		0B551E901DE50B1E006BC2AF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0B640A031DE53A3F0069A9FE /* ResultsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
 		0B8CAB341DE4D00C00B113E0 /* DrinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
 		0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedDrinkView.swift; sourceTree = "<group>"; };
 		0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedField.swift; sourceTree = "<group>"; };
@@ -43,7 +45,7 @@
 		0BB22FF91DDF85DC00F73410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BB22FFC1DDF85DC00F73410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BB22FFE1DDF85DC00F73410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BD2F3FD1DE3DEF10044CCD2 /* Cocktail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		0BD2F3FD1DE3DEF10044CCD2 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0BE3DC0A1DE0DC5300FAFF07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B22F5D3A7949D7EFFB8BDDF /* Pods-myPantry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myPantry.release.xcconfig"; path = "Pods/Target Support Files/Pods-myPantry/Pods-myPantry.release.xcconfig"; sourceTree = "<group>"; };
 		C20CCBC5F3339B0688FB25B6 /* Pods_myPantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myPantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0B06FC551DE2170B00737201 /* User.swift */,
-				0BD2F3FD1DE3DEF10044CCD2 /* Cocktail.swift */,
+				0BD2F3FD1DE3DEF10044CCD2 /* Recipe.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -128,6 +130,7 @@
 				0BB22FF61DDF85DC00F73410 /* Main.storyboard */,
 				0BB22FF41DDF85DC00F73410 /* BarVC.swift */,
 				0B9D097A1DE337FD00F80217 /* SignInVC.swift */,
+				0B640A031DE53A3F0069A9FE /* ResultsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -288,11 +291,12 @@
 			files = (
 				0BB22FF51DDF85DC00F73410 /* BarVC.swift in Sources */,
 				0BB22FF31DDF85DC00F73410 /* AppDelegate.swift in Sources */,
-				0BD2F3FE1DE3DEF10044CCD2 /* Cocktail.swift in Sources */,
+				0BD2F3FE1DE3DEF10044CCD2 /* Recipe.swift in Sources */,
 				0B06FC561DE2170B00737201 /* User.swift in Sources */,
 				0B4C61AA1DDFAA93001CD3F8 /* RoundField.swift in Sources */,
 				0B9D097B1DE337FD00F80217 /* SignInVC.swift in Sources */,
 				0B8CAB391DE4EA5800B113E0 /* RoundedField.swift in Sources */,
+				0B640A041DE53A3F0069A9FE /* ResultsVC.swift in Sources */,
 				0B8CAB351DE4D00C00B113E0 /* DrinkCell.swift in Sources */,
 				0B4C61AC1DDFACCE001CD3F8 /* RoundedButton.swift in Sources */,
 				0B8CAB371DE4E8D500B113E0 /* RoundedDrinkView.swift in Sources */,

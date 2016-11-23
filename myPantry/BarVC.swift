@@ -24,6 +24,8 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
     var drinks = [String]()
     var selectedDrinks = [String]()
     var currentUser: User!
+    var recipes = [Recipe]()
+    
     
     override func viewDidLoad() {
         self.selectedDrinks = []
@@ -71,6 +73,19 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResultsVC" {
+            // if the destination is the liquor detail view controller
+            if let resultsVC = segue.destination as? ResultsVC {
+                // if the info is an instance of liquor results
+                if let recipe = sender as? [Recipe] {
+                    // this instance sends through to the variable on the other side
+                    resultsVC.recipes = recipe
+                }
+            }
+        }
+    }
+    
     func setCurrentUser() {
         DataService.ds.REF_USER_CURRENT.observeSingleEvent(of: .value, with: { (snapshot) in
             if let userDict = snapshot.value as? Dictionary<String, AnyObject> {
@@ -82,8 +97,6 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
     
     
     func findBarItems() {
-        
-        
         let _ = DataService.ds.REF_USER_CURRENT.observeSingleEvent( of: .value, with: { (snapshot) in
             let barID = snapshot.childSnapshot(forPath: "barID").value as! String
             print(barID)
@@ -100,22 +113,14 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
                     }
                 }
             })
-           
         })
     }
     
-  
-    
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-         return UIModalPresentationStyle.none
-    }
     
     func refreshUI() {
         self.tableView.reloadData()
     }
     
-    
-   
     
     @IBAction func addDrinkTapped(_ sender: Any) {
         drinkFormView.isHidden = false
@@ -153,7 +158,7 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
     
     @IBAction func findCocktailsTapped(_ sender: Any) {
         let url = FOOD_URL
-         let items = selectedDrinks
+        let items = selectedDrinks
         var newArray = [String]()
         
         
@@ -166,9 +171,21 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
         let alamoString = "\(url)/search?\(API_KEY)&q=\(stringSearch)"
         print(alamoString)
         
-   
-    
-     //   Alamofire.request(<#T##url: URLConvertible##URLConvertible#>)
+
+        Alamofire.request(alamoString).responseJSON { (response) in
+            let result = response.result
+            
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                if let recipes = dict["recipes"] as? [Dictionary<String, AnyObject>] {
+                    for recipe in recipes {
+                        let recipe = Recipe(recipeData: recipe)
+                        self.recipes.append(recipe)
+                        print(recipe)
+                    }
+                }
+            }
+            self.performSegue(withIdentifier: "goToResultsVC", sender: self.recipes)
+        }
     }
     
 

@@ -171,8 +171,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="JCb-lU-beb">
                                         <rect key="frame" x="10" y="10" width="303" height="180"/>
                                         <subviews>
-                                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e Vodka, Rum" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PeE-Ax-6xt" customClass="RoundedField" customModule="myPantry" customModuleProvider="target">
-                                                <rect key="frame" x="-36" y="-125" width="154.5" height="0.0"/>
+                                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e chicken, broccoli, lettuce" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PeE-Ax-6xt" customClass="RoundedField" customModule="myPantry" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="51"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -182,11 +182,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIh-Ww-nm4">
-                                                <rect key="frame" x="-36" y="-125" width="154.5" height="0.0"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIh-Ww-nm4">
+                                                <rect key="frame" x="0.0" y="79" width="303" height="101"/>
                                                 <color key="backgroundColor" red="0.19215686269999999" green="0.25882352939999997" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
-                                                <state key="normal" title="Add Drink">
+                                                <state key="normal" title="Add Ingredient">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -236,6 +236,7 @@
                         <outlet property="drinkFormView" destination="iBV-9G-mfY" id="I9L-m7-s0y"/>
                         <outlet property="submitDrinkBtn" destination="DIh-Ww-nm4" id="2Wt-gh-9iB"/>
                         <outlet property="tableView" destination="WfX-jm-xMj" id="6OX-EN-y6h"/>
+                        <segue destination="jlc-aA-tpn" kind="show" identifier="goToResultsVC" id="RmX-8O-wHW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -245,12 +246,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="526" y="170"/>
+            <point key="canvasLocation" x="500" y="170"/>
         </scene>
-        <!--View Controller-->
+        <!--ResultsVC-->
         <scene sceneID="s3H-cj-q9t">
             <objects>
-                <viewController id="jlc-aA-tpn" sceneMemberID="viewController">
+                <viewController id="jlc-aA-tpn" customClass="ResultsVC" customModule="myPantry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L8I-hK-xlR"/>
                         <viewControllerLayoutGuide type="bottom" id="lyv-Wg-0hb"/>
@@ -288,7 +289,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lqz-5J-mBK" id="Zia-Aa-XQe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocktail" translatesAutoresizingMaskIntoConstraints="NO" id="GYr-e4-m7p">
@@ -332,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgs-S1-Rk5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="-571"/>
+            <point key="canvasLocation" x="500" y="-570"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SFI-3p-umQ">
@@ -433,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRd-Ne-HKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="-569"/>
+            <point key="canvasLocation" x="-247" y="-570"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Cx8-VJ-sU3">
@@ -645,7 +646,7 @@
                                     <action selector="signInTapped:" destination="eAR-Yl-T7S" eventType="touchUpInside" id="ZeX-PF-tiB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myCocktail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIS-MI-iiI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myKitchen.io" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIS-MI-iiI">
                                 <rect key="frame" x="41" y="93" width="294" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="4Rt-Lw-FHv"/>
