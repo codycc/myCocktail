@@ -53,17 +53,13 @@ class RecipeVC: UIViewController {
             let cookBookId = snapshot.childSnapshot(forPath: "cookBookID").value as! String
             
             DataService.ds.REF_COOKBOOKS.child(cookBookId).child("recipes").observeSingleEvent(of: .value, with: { (snapshot) in
-                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                    for snap in snapshot {
-                        let snapchildValue = snap.childSnapshot(forPath: "title").value as! String
-                        if snapchildValue == self.recipe.title {
-                            self.saveBtn.setTitle("SAVED", for: .normal)
-                            
-                        }
-                        
-                    }
+                if snapshot.hasChild(self.recipe.recipeID) {
+                    self.saveBtn.setTitle("SAVED", for: .normal)
+                    self.saveBtn.backgroundColor = UIColor.darkGray
                 }
             })
+            
+//     
             
         })
         
@@ -76,22 +72,37 @@ class RecipeVC: UIViewController {
     @IBAction func backTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func sourceBtnTapped(_ sender: Any) {
+        
+        if let url = URL(string: "\(self.recipe.sourceUrl)") {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
 
     @IBAction func saveRecipe(_ sender: Any) {
         let _ = DataService.ds.REF_USER_CURRENT.observeSingleEvent(of: .value, with: { (snapshot) in
             let cookBookId = snapshot.childSnapshot(forPath: "cookBookID").value as! String
             
-            print("here is cookbookID: \(cookBookId)")
-            
-            let recipeInfo = [ "ingredients" : self.recipeIngredients,
-                               "recipe_URL" : self.recipe.imageUrl,
-                               "source_URL" : self.recipe.sourceUrl,
-                               "title": self.recipe.title]
-            
-            let _ = DataService.ds.REF_COOKBOOKS.child(cookBookId).child("recipes").childByAutoId().setValue(recipeInfo)
-            
+            DataService.ds.REF_COOKBOOKS.child(cookBookId).child("recipes").observeSingleEvent(of: .value, with: { (snapshot) in
+                if snapshot.hasChild(self.recipe.recipeID) {
+                    let _ = DataService.ds.REF_COOKBOOKS.child(cookBookId).child("recipes").child(self.recipe.recipeID).removeValue()
+                     self.saveBtn.setTitle("SAVE", for: .normal)
+                    self.saveBtn.backgroundColor = UIColor(red: 49.0/255.0, green: 69.0/255.0, blue: 157.0/255.0, alpha: 1.0)
+                   
+                } else {
+                    let recipeInfo = [ "ingredients" : self.recipeIngredients,
+                                       "recipe_URL" : self.recipe.imageUrl,
+                                       "source_URL" : self.recipe.sourceUrl,
+                                       "title": self.recipe.title]
+                    
+                    let _ = DataService.ds.REF_COOKBOOKS.child(cookBookId).child("recipes").child(self.recipe.recipeID).setValue(recipeInfo)
+                    self.saveBtn.setTitle("SAVED", for: .normal)
+                    self.saveBtn.backgroundColor = UIColor.darkGray
+                }
+            })
         })
-        self.saveBtn.setTitle("SAVED", for: .normal)
+        
     }
     
    

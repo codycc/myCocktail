@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B06FC531DE214E000737201 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06FC521DE214E000737201 /* DataService.swift */; };
 		0B06FC561DE2170B00737201 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06FC551DE2170B00737201 /* User.swift */; };
+		0B2868881DE7988500CA7879 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2868871DE7988500CA7879 /* RecipeCell.swift */; };
 		0B4C61AA1DDFAA93001CD3F8 /* RoundField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C61A91DDFAA93001CD3F8 /* RoundField.swift */; };
 		0B4C61AC1DDFACCE001CD3F8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */; };
 		0B551E911DE50B1E006BC2AF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B551E901DE50B1E006BC2AF /* Constants.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		0B06FC521DE214E000737201 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0B06FC551DE2170B00737201 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0B2868871DE7988500CA7879 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		0B4C61A91DDFAA93001CD3F8 /* RoundField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundField.swift; sourceTree = "<group>"; };
 		0B4C61AB1DDFACCE001CD3F8 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		0B551E901DE50B1E006BC2AF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				0B8CAB361DE4E8D500B113E0 /* RoundedDrinkView.swift */,
 				0B8CAB381DE4EA5800B113E0 /* RoundedField.swift */,
 				0B640A051DE53BCB0069A9FE /* ResultCell.swift */,
+				0B2868871DE7988500CA7879 /* RecipeCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				0BB22FF31DDF85DC00F73410 /* AppDelegate.swift in Sources */,
 				0BD2F3FE1DE3DEF10044CCD2 /* Recipe.swift in Sources */,
 				0B06FC561DE2170B00737201 /* User.swift in Sources */,
+				0B2868881DE7988500CA7879 /* RecipeCell.swift in Sources */,
 				0B4C61AA1DDFAA93001CD3F8 /* RoundField.swift in Sources */,
 				0B9D097B1DE337FD00F80217 /* SignInVC.swift in Sources */,
 				0B8CAB391DE4EA5800B113E0 /* RoundedField.swift in Sources */,

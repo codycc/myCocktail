@@ -16,6 +16,8 @@ class Recipe {
     private var _recipeID: String!
     private var _imageUrl: String!
     private var _socialRank: Int!
+    private var _ingredients: String!
+    private var _recipe_URL: String!
   
     
     var publisher: String {
@@ -42,10 +44,18 @@ class Recipe {
         return _socialRank
     }
     
+    var ingredients: String {
+        return _ingredients
+    }
+    
+    var recipe_URL: String {
+        return _recipe_URL
+    }
    
     
-    init(recipeData: Dictionary<String, AnyObject>) {
-        
+    init(recipeKey: String? = nil, recipeData: Dictionary<String, AnyObject>) {
+        self._recipeID = recipeKey
+        // from api
         if let title = recipeData["title"] as? String {
             self._title = title
         }
@@ -62,6 +72,17 @@ class Recipe {
             self._sourceUrl = sourceUrl
         }
         
+        // from firebase
+        if let ingredients = recipeData["ingredients"] as? String {
+            self._ingredients = ingredients
+        }
+        
+        if let recipe_URL = recipeData["recipe_URL"] as? String {
+            self._recipe_URL = recipe_URL
+        }
+        
     }
+    
+   
     
 }
