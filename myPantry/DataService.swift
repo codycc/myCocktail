@@ -22,7 +22,7 @@ class DataService {
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_BARS = DB_BASE.child("bars")
     private var _REF_COCKTAILS = DB_BASE.child("cocktails")
-    
+    private var _REF_COOKBOOKS = DB_BASE.child("cookbooks")
     
     
     
@@ -36,6 +36,10 @@ class DataService {
     
     var REF_COCKTAILS: FIRDatabaseReference {
         return _REF_COCKTAILS
+    }
+    
+    var REF_COOKBOOKS: FIRDatabaseReference {
+        return _REF_COOKBOOKS
     }
     
     var REF_USER_CURRENT: FIRDatabaseReference {

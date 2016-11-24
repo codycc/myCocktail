@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Firebase
 
 class RecipeVC: UIViewController {
     @IBOutlet weak var recipeImg: UIImageView!
@@ -47,4 +48,22 @@ class RecipeVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func saveRecipe(_ sender: Any) {
+        let _ = DataService.ds.REF_USER_CURRENT.observeSingleEvent(of: .value, with: { (snapshot) in
+            let cookBookId = snapshot.childSnapshot(forPath: "cookBookID").value as! String
+            
+            print("here is cookbookID: \(cookBookId)")
+          
+            let recipeInfo = [ "ingredients" : self.recipeIngredients,
+                               "recipe_URL" : self.recipe.imageUrl,
+                               "source_URL" : self.recipe.sourceUrl,
+                               "title": self.recipe.title]
+            
+            let _ = DataService.ds.REF_COOKBOOKS.child(cookBookId).child("recipes").childByAutoId().setValue(recipeInfo)
+         
+        })
+        
+    
+        
+    }
 }

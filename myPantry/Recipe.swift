@@ -58,6 +58,10 @@ class Recipe {
             self._imageUrl = imageUrl
         }
         
+        if let sourceUrl = recipeData["source_url"] as? String {
+            self._sourceUrl = sourceUrl
+        }
+        
     }
     
 }

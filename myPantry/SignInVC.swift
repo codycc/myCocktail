@@ -59,11 +59,17 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                                 let firebaseBarKey = firebaseBar.key
                                 let barData = ["userID": user.uid]
                                 firebaseBar.setValue(barData)
+                                
+                                let firebaseCookBook = DataService.ds.REF_COOKBOOKS.childByAutoId()
+                                let firebaseCookBookKey = firebaseCookBook.key
+                                let cookBookData = ["userID" : user.uid]
+                                firebaseCookBook.setValue(cookBookData)
 
                                 
                                 
                               let userData = ["provider" : user.providerID,
-                                              "barID": firebaseBarKey]
+                                              "barID": firebaseBarKey,
+                                              "cookBookID": firebaseCookBookKey]
                                 self.completeSignIn(id: user.uid, userData: userData)
                                 self.performSegue(withIdentifier: "goToFridgeVC", sender: nil)
                             }
