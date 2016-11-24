@@ -124,6 +124,7 @@ class BarVC: UIViewController, UITableViewDelegate, UITableViewDataSource,UIPopo
         addDrinkTextField.isHidden = false
         submitDrinkBtn.isHidden = false
         darkBgView.isHidden = false
+        addDrinkTextField.becomeFirstResponder()
     }
     
     @IBAction func submitDrinkTapped(_ sender: Any) {

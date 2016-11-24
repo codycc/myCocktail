@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var recipes = [Recipe]()
-    
+    var ingredientsArray = [Any]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -29,8 +29,8 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToRecipeVC" {
             if let recipeVC = segue.destination as? RecipeVC {
-                if let recipe = sender as? Recipe {
-                    recipeVC.recipe = recipe
+                if let recipeInfo = sender as? [Any] {
+                    recipeVC.recipeInformation = recipeInfo
                 }
             }
         }
@@ -56,8 +56,30 @@ class ResultsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let recipe = recipes[indexPath.row]
-        performSegue(withIdentifier: "goToRecipeVC", sender: recipe)
+        let recipeInfo = recipes[indexPath.row]
+        
+        let id = recipeInfo.recipeID
+        
+        let alamoString = "\(FOOD_URL)get?\(API_KEY)&rId=\(id)"
+        print("here is alamostring\(alamoString)")
+        Alamofire.request(alamoString).responseJSON { (response) in
+            let result = response.result
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                if let recipe = dict["recipe"] as? Dictionary<String, AnyObject> {
+                    if let ingredients = recipe["ingredients"] as? [String] {
+                        for ingredient in ingredients {
+                          self.ingredientsArray.append(ingredient)
+                        print(ingredient)
+                        }
+                        self.ingredientsArray.append(recipeInfo)
+                    }
+                }
+             
+            }
+            self.performSegue(withIdentifier: "goToRecipeVC", sender: self.ingredientsArray)
+            print(self.ingredientsArray)
+            self.ingredientsArray = []
+        }
     }
     
     @IBAction func backTapped(_ sender: Any) {
