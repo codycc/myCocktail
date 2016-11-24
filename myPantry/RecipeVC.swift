@@ -12,6 +12,7 @@ import Firebase
 
 class RecipeVC: UIViewController {
     @IBOutlet weak var recipeImg: UIImageView!
+    @IBOutlet weak var saveBtn: UIButton!
 
     @IBOutlet weak var recipeLbl: UILabel!
     @IBOutlet weak var ingredientLbl: UITextView!
@@ -41,8 +42,36 @@ class RecipeVC: UIViewController {
         
         print("here is the string containing ingredients \(recipeIngredients)")
         recipeLbl.text = recipe.title
+        
+        self.checkIfSaved()
     }
 
+    
+    func checkIfSaved() {
+        
+        let _ = DataService.ds.REF_USER_CURRENT.observeSingleEvent(of: .value, with: { (snapshot) in
+            let cookBookId = snapshot.childSnapshot(forPath: "cookBookID").value as! String
+            
+            DataService.ds.REF_COOKBOOKS.child(cookBookId).child("recipes").observeSingleEvent(of: .value, with: { (snapshot) in
+                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshot {
+                        let snapchildValue = snap.childSnapshot(forPath: "title").value as! String
+                        if snapchildValue == self.recipe.title {
+                            self.saveBtn.setTitle("SAVED", for: .normal)
+                            
+                        }
+                        
+                    }
+                }
+            })
+            
+        })
+        
+    }
+
+        
+        
+    
   
     @IBAction func backTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -53,17 +82,17 @@ class RecipeVC: UIViewController {
             let cookBookId = snapshot.childSnapshot(forPath: "cookBookID").value as! String
             
             print("here is cookbookID: \(cookBookId)")
-          
+            
             let recipeInfo = [ "ingredients" : self.recipeIngredients,
                                "recipe_URL" : self.recipe.imageUrl,
                                "source_URL" : self.recipe.sourceUrl,
                                "title": self.recipe.title]
             
             let _ = DataService.ds.REF_COOKBOOKS.child(cookBookId).child("recipes").childByAutoId().setValue(recipeInfo)
-         
+            
         })
-        
-    
-        
+        self.saveBtn.setTitle("SAVED", for: .normal)
     }
+    
+   
 }

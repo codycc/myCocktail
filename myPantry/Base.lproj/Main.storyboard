@@ -455,8 +455,9 @@
                                     <constraint firstItem="wp4-6c-Fxh" firstAttribute="leading" secondItem="mLF-lN-Il2" secondAttribute="leading" constant="8" id="Woj-tV-TAV"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocktail" translatesAutoresizingMaskIntoConstraints="NO" id="YBH-gq-iYo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocktail" translatesAutoresizingMaskIntoConstraints="NO" id="YBH-gq-iYo">
                                 <rect key="frame" x="0.0" y="65" width="414" height="250"/>
+                                <color key="backgroundColor" red="0.33742587214306852" green="0.33742587214306852" blue="0.33742587214306852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="b9R-Pr-gTQ"/>
                                 </constraints>
@@ -513,6 +514,7 @@
                         <outlet property="ingredientLbl" destination="nnx-12-ug1" id="df7-Vq-qgF"/>
                         <outlet property="recipeImg" destination="YBH-gq-iYo" id="LEa-N2-WJC"/>
                         <outlet property="recipeLbl" destination="xhU-vk-lPc" id="TSs-TO-Eet"/>
+                        <outlet property="saveBtn" destination="YpR-f7-JFs" id="ZOB-lr-CXQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRd-Ne-HKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -623,7 +625,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell-pepper-569070_1920" translatesAutoresizingMaskIntoConstraints="NO" id="7ip-pr-Kjs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0504" translatesAutoresizingMaskIntoConstraints="NO" id="7ip-pr-Kjs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-Wz-ygY">
@@ -779,8 +781,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IMG_0504" width="3024" height="4032"/>
         <image name="backarrow" width="128" height="128"/>
-        <image name="bell-pepper-569070_1920" width="1012" height="1268"/>
         <image name="chicken" width="656" height="369"/>
         <image name="cocktail" width="1500" height="1125"/>
         <image name="plusbutton" width="512" height="512"/>
